@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Nattha Siriboon 60011240</title>
+</head>
+<body>
+   
+    
+
+<div class="box">
+    <p id="question"></p>
+    <input id="answer" type="text"> 
+    <hr/>
+    <button onclick="clickk()">SUBMIT</button>
+    <div id="nonti" style="padding: 10px"></div>
+
+</div>
+
+<script>
+    var a = Math.round(Math.random()*100);
+    var b = Math.round(Math.random()*100);
+    $("#question").text("What is the answer of "+ a + " + " + b);
+     
+    function clickk(){
+    
+        if ($("#answer").val() == a+b) {
+            $("#nonti").text("Good job bro!!!"); 
+            $("#nonti").css("color","green"); 
+            setTimeout(good, 2000);
+
+        }else{
+            $("#nonti").text("No Good Do It Again"); 
+            $("#nonti").css("color","Red");
+            setTimeout(bad, 2000);
+        }
+    }
+    function good(){
+    a = Math.round(Math.random()*100);
+    b = Math.round(Math.random()*100);
+    $("#question").text("What is the answer of "+ a + " + " + b);
+    $("#answer").val('');
+    $("#nonti").text(''); 
+    }
+
+    function bad(){
+    $("#answer").val('');
+    $("#nonti").text(''); 
+    }           
+    
+</script>
+</body>
+</html>
